@@ -1,6 +1,6 @@
 # Apple News API Client
 
-[![CircleCI](https://circleci.com/gh/Robert-Fairley/apple-news-client.svg?style=svg&circle-token=7e6a70dcf17b090349157248fdf5b11c31964bbc)](https://circleci.com/gh/Robert-Fairley/apple-news-client)
+[![CircleCI](https://circleci.com/gh/robertfairley/apple-news-client.svg?style=svg&circle-token=f9b87968abe055eb87bd7162c2f7563679acd5c9)](https://circleci.com/gh/robertfairley/apple-news-client)
 
 This is a rewrite of MicNews' API wrapper for the Apple News API.
 
