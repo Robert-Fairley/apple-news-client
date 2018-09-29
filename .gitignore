@@ -1,0 +1,20 @@
+.DS_Store
+node_modules
+._*
+*.pem
+*.crt
+*.csr
+*.o
+*.a
+*.private.*
+.env
+*.tgz
+
+# Build Files
+lib
+
+# Test Results
+coverage
+.nyc_output
+mochawesome-report
+.test-reports

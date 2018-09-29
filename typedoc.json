@@ -1,0 +1,12 @@
+{
+  "src": ["./src"],
+  "out": "./docs",
+  "mode": "modules",
+  "exclude": "test",
+  "theme": "default",
+  "target": "es5",
+  "preserveConstEnums": "true",
+  "moduleResolution": "node",
+  "module": "commonjs",
+  "readme": "README.md"
+}

@@ -1,0 +1,18 @@
+# Defaults
+.DS_Store
+.env
+*.pem
+*.crt
+*.csr
+*.o
+*.a
+*.tgz
+
+# Documentation
+docs
+
+# Test Results
+.nyc_output
+mochawesome-report
+coverage
+.test-reports
