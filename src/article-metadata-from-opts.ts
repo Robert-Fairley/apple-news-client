@@ -20,6 +20,7 @@ export function articleMetadataFromOpts(
      */
     const metadataObject: AppleNews.Metadata  = {
         isPreview: typeof options.isPreview === "boolean" ? options.isPreview : true,
+        isIssueOnly: typeof options.isIssueOnly === "boolean" ? options.isIssueOnly : false,
         isSponsored: !!options.isSponsored,
     };
 
