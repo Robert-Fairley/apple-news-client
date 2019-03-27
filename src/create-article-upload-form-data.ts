@@ -6,6 +6,7 @@ import {
 } from "./json";
 
 import { AppleNews } from "./apple-news";
+import { articleMetadataFromOpts } from "./article-metadata-from-opts";
 
 /**
  *
@@ -17,7 +18,7 @@ import { AppleNews } from "./apple-news";
 export function createArticleUploadFormData(
     article: JSONArray,
     bundleFiles?: JSONObject,
-    metadata?: AppleNews.Metadata,
+    metadata?: AppleNews.IncomingOptions,
 ) : JSONArray {
 
     assert(typeof article !== "undefined", "Article JSON must be passed as an argument.");
@@ -27,7 +28,7 @@ export function createArticleUploadFormData(
     assert(typeof files["article.json"] === "undefined", "Bundle cannot contain `article.json`");
     assert(typeof files["metadata"] === "undefined", "Bundle cannot contain metadata file.");
 
-    const meta: any = metadata || {};
+    const meta: AppleNews.Metadata | object = articleMetadataFromOpts(metadata);
 
     const articleJson: string = JSON.stringify(article);
     const metadataJson: string = JSON.stringify({ data: meta });
