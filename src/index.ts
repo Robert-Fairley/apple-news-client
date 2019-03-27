@@ -200,7 +200,7 @@ export default class AppleNewsClient {
 
         const articleId = options.articleId;
         const bundleFiles = options.bundleFiles || {};
-        const meta = articleMetadataFromOpts(options);
+        const meta = <AppleNews.Metadata> articleMetadataFromOpts(options);
         meta.revision = options.revision;
         const fd = createArticleUploadFormData(options.article, bundleFiles, meta);
 
