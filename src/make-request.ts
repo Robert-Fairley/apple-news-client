@@ -1,10 +1,10 @@
 import { createHmac } from "crypto";
-import { IncomingMessage } from "http";
+import { ClientRequest, IncomingMessage } from "http";
 import * as https from "https";
 import { AppleNews } from "./apple-news";
 import { DEFAULT_HOST } from "./constants";
 import { formatDate } from "./date";
-import { encodeFormData } from "./encode-form-data";
+import { encodeFormData, MaybeError } from "./encode-form-data";
 
 /**
  * Callback function for the make request function.
@@ -56,9 +56,9 @@ export function setupMakeRequest(
         }
 
         // FINISH
-        const key = Buffer.from(config.apiSecret, "base64");
+        const key: Buffer = Buffer.from(config.apiSecret, "base64");
 
-        const signature = createHmac("sha256", key)
+        const signature: string = createHmac("sha256", key)
             .update(canonicalRequest, "utf8")
             .digest("base64");
 
@@ -66,7 +66,7 @@ export function setupMakeRequest(
             "\"; signature=\"" + signature +
             "\"; date=\"" + date + "\"";
 
-        const req = https.request({
+        const req: ClientRequest = https.request({
             method,
             host,
             port: config.port || void 0,
@@ -186,7 +186,7 @@ export function setupMakeRequest(
         if (method === "POST" && requestOptions.formData) {
             return encodeFormData(
                 requestOptions.formData || {},
-                (error: Error, encoded: any) => {
+                (error: MaybeError, encoded: any) => {
 
                     if (error) {
                         return done(error);

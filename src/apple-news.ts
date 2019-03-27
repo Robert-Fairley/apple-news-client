@@ -5,6 +5,18 @@
 export namespace AppleNews {
 
     /**
+     * @type {ArticleOptions} - Incoming article options/metadata provided.
+     */
+    export type ArticleOptions = {
+
+        /**
+         * @property {Array<string>} sections - Array of section URLs to link to the provided article
+         * @default undefined
+         */
+        sections?: string[],
+    };
+
+    /**
      * @type {Metadata} - Apple News article metadata object
      */
     export type Metadata = {
@@ -58,7 +70,7 @@ export namespace AppleNews {
          * content that is only appropriate for a specific audience.
          * @default null
          */
-        maturityRating?: "KIDS" | "MATURE" | "GENERAL";
+        maturityRating?: "KIDS" | "MATURE" | "GENERAL",
 
         /**
          * @property {string} revision - The current revision token for the article. The value of this field
@@ -66,14 +78,30 @@ export namespace AppleNews {
          * or Update Article call. This field prevents multiple users from updating an article simultaneously,
          * which would result in data loss.
          */
-        revision?: string;
+        revision?: string,
+
+        /**
+         * @property {boolean} isIssueOnly - Flags whether or not the article will be visible in the main
+         * channel feed or whether it should only appear in the context of an issue's contents.
+         * @default false
+         */
+        isIssueOnly?: boolean,
 
         /**
          * @property {any} links - Associated sections.
          * @todo Improve the documentation on this field.
          */
-        links?: any;
+        links?: any,
     };
+
+    /**
+     * Type representing possible input values for article options
+     * and metadata.
+     * @type {IncomingOptions}
+     */
+    export type IncomingOptions
+        = AppleNews.ArticleOptions
+        & AppleNews.Metadata;
 
     /**
      * Configuration type. Contains the API Key Id and Secret

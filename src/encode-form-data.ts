@@ -14,10 +14,27 @@ import {
 } from "./json";
 
 /**
+ * A type expression for when a value may possibly be an Error class,
+ * but may also be set `null` or not set at all.
+ * @type {MaybeError}
+ */
+export type MaybeError
+    = Error
+    | null
+    | undefined;
+
+/**
+ * A generic callback function that doesn't enforce any arguments
+ * and allows any kind of return.
+ * @type {GenericCallback}
+ */
+export type GenericCallback = (...args: any[]) => any;
+
+/**
  * Callback function parameters for encodeFormData function.
  * @type {EncodeFormDataCallback}
  */
-export type EncodeFormDataCallback = (...args: any[]) => any;
+export type EncodeFormDataCallback = (error?: MaybeError, result?: object) => any;
 
 /**
  * Object passed to callback function in encodeFormData
@@ -47,7 +64,9 @@ function append(
 
     const options: JSONValue = item.options;
 
-    const length: number = typeof data === "string" ? Buffer.byteLength(data) : data.length;
+    const length: number = typeof data === "string"
+                            ? Buffer.byteLength(data)
+                            : data.length;
 
     const header: string = "--" + form.getBoundary() + CRLF +
         "Content-Type: " + contentType + CRLF +
@@ -95,13 +114,13 @@ export function encodeFormData(
                 const data: Buffer = fs.readFileSync(value);
 
                 if (!data) {
-                    return cb(new Error("File not found: " + value));
+                    return cb(new Error(`File not found: ${value}`));
                 }
 
                 const contentObject = fileType(data);
 
                 if (!contentObject) {
-                    return cb(new Error("Filetype error: " + value));
+                    return cb(new Error(`Filetype error: ${value}`));
                 }
 
                 let contentType = contentObject.mime;
@@ -114,11 +133,10 @@ export function encodeFormData(
         },
     );
 
-    const converter: stream.Writable = new stream
-    .Writable();
+    const converter: stream.Writable = new stream.Writable();
     const chunks: any[] = [];
 
-    converter._write = (chunk: any, enc: string, callback: any) => {
+    converter._write = (chunk: any, encoding: string, callback: GenericCallback) => {
 
         chunks.push(chunk);
         callback();

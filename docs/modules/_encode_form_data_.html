@@ -75,6 +75,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_encode_form_data_.html#encodeformdatacallback" class="tsd-kind-icon">Encode<wbr>Form<wbr>Data<wbr>Callback</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_encode_form_data_.html#encodedformdata" class="tsd-kind-icon">Encoded<wbr>Form<wbr>Data</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_encode_form_data_.html#genericcallback" class="tsd-kind-icon">Generic<wbr>Callback</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-external-module"><a href="_encode_form_data_.html#maybeerror" class="tsd-kind-icon">Maybe<wbr>Error</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -95,7 +97,7 @@
 					<div class="tsd-signature tsd-kind-icon">Encode<wbr>Form<wbr>Data<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/encode-form-data.ts#L20">encode-form-data.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L37">encode-form-data.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -113,14 +115,17 @@
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter-siganture">
 								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>error<span class="tsd-signature-symbol">?: </span><a href="_encode_form_data_.html#maybeerror" class="tsd-signature-type">MaybeError</a>, result<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 								</ul>
 								<ul class="tsd-descriptions">
 									<li class="tsd-description">
 										<h4 class="tsd-parameters-title">Parameters</h4>
 										<ul class="tsd-parameters">
 											<li>
-												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> error: <a href="_encode_form_data_.html#maybeerror" class="tsd-signature-type">MaybeError</a></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> result: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
 											</li>
 										</ul>
 										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -136,7 +141,7 @@
 					<div class="tsd-signature tsd-kind-icon">Encoded<wbr>Form<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/encode-form-data.ts#L27">encode-form-data.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L44">encode-form-data.ts:44</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -167,6 +172,69 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="genericcallback" class="tsd-anchor"></a>
+					<h3>Generic<wbr>Callback</h3>
+					<div class="tsd-signature tsd-kind-icon">Generic<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L31">encode-form-data.ts:31</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A generic callback function that doesn&#39;t enforce any arguments
+							and allows any kind of return.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{GenericCallback}</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-siganture">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-external-module">
+					<a name="maybeerror" class="tsd-anchor"></a>
+					<h3>Maybe<wbr>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Maybe<wbr>Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L21">encode-form-data.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A type expression for when a value may possibly be an Error class,
+							but may also be set <code>null</code> or not set at all.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{MaybeError}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
@@ -180,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/encode-form-data.ts#L41">encode-form-data.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L58">encode-form-data.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,7 +286,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/encode-form-data.ts#L78">encode-form-data.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/encode-form-data.ts#L97">encode-form-data.ts:97</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,6 +356,12 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
 						<a href="_encode_form_data_.html#encodedformdata" class="tsd-kind-icon">Encoded<wbr>Form<wbr>Data</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_encode_form_data_.html#genericcallback" class="tsd-kind-icon">Generic<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="_encode_form_data_.html#maybeerror" class="tsd-kind-icon">Maybe<wbr>Error</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_encode_form_data_.html#append" class="tsd-kind-icon">append</a>

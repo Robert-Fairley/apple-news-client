@@ -89,6 +89,8 @@
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_apple_news_.applenews.html#apiconfig" class="tsd-kind-icon">APIConfig</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_apple_news_.applenews.html#articleoptions" class="tsd-kind-icon">Article<wbr>Options</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_apple_news_.applenews.html#incomingoptions" class="tsd-kind-icon">Incoming<wbr>Options</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_apple_news_.applenews.html#metadata" class="tsd-kind-icon">Metadata</a></li>
 							</ul>
 						</section>
@@ -103,7 +105,7 @@
 					<div class="tsd-signature tsd-kind-icon">APIConfig<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/apple-news.ts#L83">apple-news.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/apple-news.ts#L111">apple-news.ts:111</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -133,12 +135,68 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="articleoptions" class="tsd-anchor"></a>
+					<h3>Article<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Article<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/apple-news.ts#L10">apple-news.ts:10</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{ArticleOptions} - Incoming article options/metadata provided.</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> sections<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>property</dt>
+										<dd><p>{Array<string>} sections - Array of section URLs to link to the provided article</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>undefined</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="incomingoptions" class="tsd-anchor"></a>
+					<h3>Incoming<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Incoming<wbr>Options<span class="tsd-signature-symbol">:</span> <a href="_apple_news_.applenews.html#articleoptions" class="tsd-signature-type">ArticleOptions</a><span class="tsd-signature-symbol"> &amp; </span><a href="_apple_news_.applenews.html#metadata" class="tsd-signature-type">Metadata</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/apple-news.ts#L102">apple-news.ts:102</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Type representing possible input values for article options
+							and metadata.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{IncomingOptions}</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="metadata" class="tsd-anchor"></a>
 					<h3>Metadata</h3>
 					<div class="tsd-signature tsd-kind-icon">Metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/e526ae3/src/apple-news.ts#L10">apple-news.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/robertfairley/apple-news-client/blob/566c629/src/apple-news.ts#L22">apple-news.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -186,6 +244,20 @@
 										<dt>property</dt>
 										<dd><p>{boolean} isHidden - Indicates whether or not the article should be temporarily hidden from
 											display in the News feed.</p>
+										</dd>
+										<dt>default</dt>
+										<dd><p>false</p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> is<wbr>Issue<wbr>Only<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<dl class="tsd-comment-tags">
+										<dt>property</dt>
+										<dd><p>{boolean} isIssueOnly - Flags whether or not the article will be visible in the main
+											channel feed or whether it should only appear in the context of an issue&#39;s contents.</p>
 										</dd>
 										<dt>default</dt>
 										<dd><p>false</p>
@@ -287,6 +359,12 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_apple_news_.applenews.html#apiconfig" class="tsd-kind-icon">APIConfig</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_apple_news_.applenews.html#articleoptions" class="tsd-kind-icon">Article<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_apple_news_.applenews.html#incomingoptions" class="tsd-kind-icon">Incoming<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_apple_news_.applenews.html#metadata" class="tsd-kind-icon">Metadata</a>
