@@ -28,7 +28,7 @@ export function createArticleUploadFormData(
     assert(typeof files["article.json"] === "undefined", "Bundle cannot contain `article.json`");
     assert(typeof files["metadata"] === "undefined", "Bundle cannot contain metadata file.");
 
-    const meta: AppleNews.Metadata | object = articleMetadataFromOpts(metadata);
+    const meta: AppleNews.Metadata = metadata || {};
 
     const articleJson: string = JSON.stringify(article);
     const metadataJson: string = JSON.stringify({ data: meta });
