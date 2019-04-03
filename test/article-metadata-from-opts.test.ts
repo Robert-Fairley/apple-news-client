@@ -3,6 +3,7 @@ import { expect } from "chai";
 
 import { articleMetadataFromOpts } from "../src/article-metadata-from-opts";
 import { AppleNews } from "../src/apple-news";
+import { METADATA_DEFAULT } from "../src/constants"
 
 describe("articleMetadataFromOpts()", () => {
 
@@ -43,11 +44,12 @@ describe("articleMetadataFromOpts()", () => {
     };
 
     const sampleMetadataDefaults: AppleNews.Metadata = {
-        isPreview: true,
-        isIssueOnly: false,
-        isCandidateToBeFeatured: false,
-        isHidden: false,
-        isSponsored: false,
+        isPreview: METADATA_DEFAULT.IS_PREVIEW,
+        isIssueOnly: METADATA_DEFAULT.IS_ISSUE_ONLY,
+        isPaid: METADATA_DEFAULT.IS_PAID,
+        isCandidateToBeFeatured: METADATA_DEFAULT.IS_CANDIDATE_TO_BE_FEATURED,
+        isHidden: METADATA_DEFAULT.IS_HIDDEN,
+        isSponsored: METADATA_DEFAULT.IS_SPONSORED,
     };
 
 
