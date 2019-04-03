@@ -1,3 +1,5 @@
+import { AppleNews } from "./apple-news";
+
 /**
  * Default Apple News host. There's not much reason another might be
  * used, but the option is presented anyway.
@@ -20,3 +22,21 @@ export const validContentTypes: string[] = [
     "image/png",
     "image/gif",
 ];
+
+/**
+ * Default values for options that were not passed explicitly
+ * with any other metadata options.
+ * @constant {AppleNews.Metadata} METADATA_DEFAULT
+ */
+export const METADATA_DEFAULT: AppleNews.Metadata = {
+    IS_PREVIEW: true,
+    IS_ISSUE_ONLY: false,
+    IS_PAID: false,
+    IS_CANDIDATE_TO_BE_FEATURED: false,
+    IS_HIDDEN: false,
+    IS_SPONSORED: false,
+    MATURITY_RATING: null,
+    ACCESSORY_TEXT: null,
+    REVISION: null,
+    LINKS: null,
+};

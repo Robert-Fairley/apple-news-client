@@ -24,9 +24,10 @@ export namespace AppleNews {
         /**
          * @property {string} accessoryText - Text to include below the article excerpt in the channel view, such
          * as a byline or category label.
-         * @default "metadata.authors"
+         * @default null
          */
         accessoryText?: string,
+        ACCESSORY_TEXT?: string | null,
 
         /**
          * @property {string} isCandidateToBeFeatured - Indicates whether or not this article should be considered
@@ -34,6 +35,7 @@ export namespace AppleNews {
          * @default false
          */
         isCandidateToBeFeatured?: boolean,
+        IS_CANDIDATE_TO_BE_FEATURED?: boolean,
 
         /**
          * @property {boolean} isHidden - Indicates whether or not the article should be temporarily hidden from
@@ -41,6 +43,7 @@ export namespace AppleNews {
          * @default false
          */
         isHidden?: boolean,
+        IS_HIDDEN?: boolean,
 
         /**
          * @property {boolean} isPreview - Indicates whether this article should be public (live) or should
@@ -53,6 +56,7 @@ export namespace AppleNews {
          * @default true
          */
         isPreview?: boolean,
+        IS_PREVIEW?: boolean,
 
         /**
          * @property {boolean} isSponsored - Indicates whether this article consists of sponsored content
@@ -63,6 +67,7 @@ export namespace AppleNews {
          * @default false
          */
         isSponsored?: boolean,
+        IS_SPONSORED?: boolean,
 
         /**
          * @property {string} maturityRating - Indicates the viewing audience for the content. Note that a
@@ -71,14 +76,17 @@ export namespace AppleNews {
          * @default null
          */
         maturityRating?: "KIDS" | "MATURE" | "GENERAL",
+        MATURITY_RATING?: string | null,
 
         /**
          * @property {string} revision - The current revision token for the article. The value of this field
          * must match the latest revision from an earlier Create, Read,
          * or Update Article call. This field prevents multiple users from updating an article simultaneously,
          * which would result in data loss.
+         * @default null
          */
         revision?: string,
+        REVISION?: string | null,
 
         /**
          * @property {boolean} isIssueOnly - Flags whether or not the article will be visible in the main
@@ -86,12 +94,22 @@ export namespace AppleNews {
          * @default false
          */
         isIssueOnly?: boolean,
+        IS_ISSUE_ONLY?: boolean,
+
+        /**
+         * @property {boolean} isPaid - Flags whether or not the article is available only to Apple News+ subscribers
+         * @default false
+         */
+        isPaid?: boolean,
+        IS_PAID?: boolean,
 
         /**
          * @property {any} links - Associated sections.
          * @todo Improve the documentation on this field.
+         * @default null
          */
         links?: any,
+        LINKS?: any,
     };
 
     /**
