@@ -16,7 +16,7 @@ export type ClientRequestCallback = (...args: any[]) => any;
  * The Apple News Client class. Exposing an instance of the client
  * is necessary for accessing the various request types.
  */
-export class AppleNewsClient {
+export default class AppleNewsClient {
     /**
      * @property {string} apiId - The Apple News API Key Id.
      * @private
