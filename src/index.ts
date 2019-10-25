@@ -255,11 +255,22 @@ export default class AppleNewsClient {
         assert(typeof options.channelId === "string" || typeof options.sectionId === "string",
             "options.channelId or options.sectionId required");
 
+        let queryParams = ["pageSize", "fromDate", "toDate", "sortDir"].reduce((acc, param) => {
+            if (options[param]) {
+                assert(["string", "number"].includes(typeof options[param]),
+                    `options.${param} must be of type string or number`);
+                acc += `${param}=${options[param]}&`;
+            }
+            return acc;
+        }, '');
+
+        queryParams = queryParams ? '?' + queryParams : '';
+
         const channelId = options.channelId;
         const sectionId = options.sectionId;
         const endpoint = channelId
-            ? `/channels/${channelId}/articles`
-            : `/sections/${sectionId}/articles`;
+            ? `/channels/${channelId}/articles${queryParams}`
+            : `/sections/${sectionId}/articles${queryParams}`;
 
         this.makeRequest(
             "GET",
