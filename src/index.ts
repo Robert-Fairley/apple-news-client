@@ -264,7 +264,7 @@ export default class AppleNewsClient {
             return acc;
         }, '');
 
-        queryParams = queryParams ? '?' + queryParams : '';
+        queryParams = queryParams ? '?' + queryParams.slice(0, -1) : '';
 
         const channelId = options.channelId;
         const sectionId = options.sectionId;
