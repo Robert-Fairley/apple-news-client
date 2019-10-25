@@ -1,6 +1,6 @@
 {
   "name": "apple-news-client",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "Apple News API Client for NodeJS and TypeScript",
   "main": "index.js",
   "types": "./lib/index.d.ts",
