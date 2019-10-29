@@ -26,7 +26,7 @@ npm install apple-news-client
 TypeScript
 
 ```typescript
-import AppleNewsClient from "apple-news-client";
+import { AppleNewsClient } from "apple-news-client";
 
 const client: AppleNewsClient = new AppleNewsClient({
     apiId: "<API_ID>",

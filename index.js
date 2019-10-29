@@ -19,4 +19,7 @@
  *****************************************************************/
 const AppleNewsClient = require("./lib").default;
 
-module.exports = AppleNewsClient;
+module.exports = {
+    default: AppleNewsClient,
+    AppleNewsClient
+};
