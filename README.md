@@ -53,8 +53,35 @@ const client = new AppleNewsClient({
 * [createArticle](#createarticle)
 * [updateArticle](#updatearticle)
 * [deleteArticle](#deletearticle)
+* [searchArticles](#searchArticles)
 
 *Note: The method code examples below are displayed in TypeScript. For ES5/ES6 JavaScript just remove the type assertions.*
+
+### Any of the bellow methods with promises
+
+Same methods name with Async appended at the end: `readChannel` => `readChannelAsync`
+
+TYPESCRIPT: Returns typed promise so it can be called like `client.readChannel<MyInterface>(...)` - defaults to unknown if type is omitted
+
+```typescript
+async function veryDescriptiveFunctionName {
+    // wrap into try/catch if you wish
+    const data = await client.readChannelAsync({ channelId: "<CHANNEL_ID>", });
+
+    // Do something with the response here.
+}
+
+async function veryDescriptiveFunctionName {
+    client.readChannelAsync({ channelId: "<CHANNEL_ID>", })
+        .then(res => {
+
+            // Do something with the response here.
+        }).catch(err => {
+
+            // Handle error.
+        });
+}
+```
 
 ### readChannel
 
@@ -152,6 +179,24 @@ Delete the specified article.
 ```typescript
 client.deleteArticle(
     { articleId: "<PATH_TO_ARTICLE>", },
+    (error: Error, response: any) => {
+
+        // Do something with the response here.
+});
+```
+
+### searchArticles
+
+Search articles in section with specified parameters.
+
+Optional parameters:
+
+* Strings: fromDate, sortDir, toDate, pageToken
+* Integer: pageSize
+
+```typescript
+client.searchArticles(
+    { sectionId: "<SECTION_ID>", },
     (error: Error, response: any) => {
 
         // Do something with the response here.

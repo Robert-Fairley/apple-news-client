@@ -255,7 +255,7 @@ export class AppleNewsClient {
         assert(typeof options.channelId === "string" || typeof options.sectionId === "string",
             "options.channelId or options.sectionId required");
 
-        let queryParams = ["pageSize", "fromDate", "toDate", "sortDir"].reduce((acc, param) => {
+        let queryParams = ["pageSize", "fromDate", "toDate", "sortDir", "pageToken"].reduce((acc, param) => {
             if (options[param]) {
                 assert(["string", "number"].includes(typeof options[param]),
                     `options.${param} must be of type string or number`);
@@ -278,6 +278,166 @@ export class AppleNewsClient {
             {},
             callback,
         );
+    }
+
+    /**
+     * Get details about your channel including name, corresponding website, and default section.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public readChannelAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.readChannel(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * See a list of available sections in your channel.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public listSectionsAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.listSections(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Get the specified section's name and channel, and learn whether it’s a default section.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public readSectionAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.readSection(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Publish an article to your channel.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public createArticleAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.createArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Retrieve information about an article, such as the revision number, maturity rating, and so on.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public readArticleAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.readArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Update an existing article in your channel.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public updateArticleAsync<T>(options: any) {
+        return new Promise<T>((resolve, reject) => {
+            this.updateArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * Delete the specified article from your channel.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public deleteArticleAsync<T>(options: any) {
+        return new Promise<T[]>((resolve, reject) => {
+            this.deleteArticle(
+                options,
+                (err: Error, response: T[]) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
+    }
+
+    /**
+     * See a list of all articles in a channel that match the specified search criteria.
+     * @param {any} options
+     * @returns {Promise<T>}
+     * @public
+     */
+    public searchArticlesAsync<T>(options: any) {
+        return new Promise<T[]>((resolve, reject) => {
+            this.searchArticles(
+                options,
+                (err: Error, response: T[]) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 }
 
