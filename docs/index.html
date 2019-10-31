@@ -100,8 +100,29 @@
 					<li><a href="#createarticle">createArticle</a></li>
 					<li><a href="#updatearticle">updateArticle</a></li>
 					<li><a href="#deletearticle">deleteArticle</a></li>
+					<li><a href="#searchArticles">searchArticles</a></li>
 				</ul>
 				<p><em>Note: The method code examples below are displayed in TypeScript. For ES5/ES6 JavaScript just remove the type assertions.</em></p>
+				<h3 id="any-of-the-bellow-methods-with-promises">Any of the bellow methods with promises</h3>
+				<p>Same methods name with Async appended at the end: <code>readChannel</code> =&gt; <code>readChannelAsync</code></p>
+				<p>TYPESCRIPT: Returns typed promise so it can be called like <code>client.readChannel&lt;MyInterface&gt;(...)</code> - defaults to unknown if type is omitted</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">veryDescriptiveFunctionName</span> </span>{
+    <span class="hljs-comment">// wrap into try/catch if you wish</span>
+    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> client.readChannelAsync({ channelId: <span class="hljs-string">"&lt;CHANNEL_ID&gt;"</span>, });
+
+    <span class="hljs-comment">// Do something with the response here.</span>
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">veryDescriptiveFunctionName</span> </span>{
+    client.readChannelAsync({ channelId: <span class="hljs-string">"&lt;CHANNEL_ID&gt;"</span>, })
+        .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> {
+
+            <span class="hljs-comment">// Do something with the response here.</span>
+        }).catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+
+            <span class="hljs-comment">// Handle error.</span>
+        });
+}</code></pre>
 				<h3 id="readchannel">readChannel</h3>
 				<p>Get the details of a specified channel.</p>
 				<pre><code class="language-typescript">client.readChannel(
@@ -165,6 +186,19 @@ client.updateArticle(
 				<p>Delete the specified article.</p>
 				<pre><code class="language-typescript">client.deleteArticle(
     { articleId: <span class="hljs-string">"&lt;PATH_TO_ARTICLE&gt;"</span>, },
+    <span class="hljs-function">(<span class="hljs-params">error: <span class="hljs-built_in">Error</span>, response: <span class="hljs-built_in">any</span></span>) =&gt;</span> {
+
+        <span class="hljs-comment">// Do something with the response here.</span>
+});</code></pre>
+				<h3 id="searcharticles">searchArticles</h3>
+				<p>Search articles in section with specified parameters.</p>
+				<p>Optional parameters:</p>
+				<ul>
+					<li>Strings: fromDate, sortDir, toDate, pageToken</li>
+					<li>Integer: pageSize</li>
+				</ul>
+				<pre><code class="language-typescript">client.searchArticles(
+    { sectionId: <span class="hljs-string">"&lt;SECTION_ID&gt;"</span>, },
     <span class="hljs-function">(<span class="hljs-params">error: <span class="hljs-built_in">Error</span>, response: <span class="hljs-built_in">any</span></span>) =&gt;</span> {
 
         <span class="hljs-comment">// Do something with the response here.</span>
