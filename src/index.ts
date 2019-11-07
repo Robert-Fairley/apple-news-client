@@ -287,7 +287,17 @@ export class AppleNewsClient {
      * @public
      */
     public readChannelAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.readChannel);
+        return new Promise<T>((resolve, reject) => {
+            this.readChannel(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -297,7 +307,17 @@ export class AppleNewsClient {
      * @public
      */
     public listSectionsAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.listSections);
+        return new Promise<T>((resolve, reject) => {
+            this.listSections(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -307,7 +327,17 @@ export class AppleNewsClient {
      * @public
      */
     public readSectionAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.readSection);
+        return new Promise<T>((resolve, reject) => {
+            this.readSection(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -317,7 +347,17 @@ export class AppleNewsClient {
      * @public
      */
     public createArticleAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.createArticle);
+        return new Promise<T>((resolve, reject) => {
+            this.createArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -327,7 +367,17 @@ export class AppleNewsClient {
      * @public
      */
     public readArticleAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.readArticle);
+        return new Promise<T>((resolve, reject) => {
+            this.readArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -337,8 +387,17 @@ export class AppleNewsClient {
      * @public
      */
     public updateArticleAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.updateArticle);
-
+        return new Promise<T>((resolve, reject) => {
+            this.updateArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -348,7 +407,17 @@ export class AppleNewsClient {
      * @public
      */
     public deleteArticleAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.deleteArticle);
+        return new Promise<T>((resolve, reject) => {
+            this.deleteArticle(
+                options,
+                (err: Error, response: T) => {
+                    if (err) {
+                        reject(err);
+                    } else {
+                        resolve(response);
+                    }
+                });
+        });
     }
 
     /**
@@ -358,15 +427,8 @@ export class AppleNewsClient {
      * @public
      */
     public searchArticlesAsync<T>(options: any) {
-        return this.asyncWrapper<T>(options, this.searchArticles);
-    }
-
-    private async asyncWrapper<T>(
-        options: any,
-        cb: (options: any, cb: (err?: any, res?: any) => void) => void,
-    ) {
         return new Promise<T>((resolve, reject) => {
-            cb(
+            this.searchArticles(
                 options,
                 (err: Error, response: T) => {
                     if (err) {
