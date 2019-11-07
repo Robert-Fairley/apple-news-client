@@ -407,10 +407,10 @@ export class AppleNewsClient {
      * @public
      */
     public deleteArticleAsync<T>(options: any) {
-        return new Promise<T[]>((resolve, reject) => {
+        return new Promise<T>((resolve, reject) => {
             this.deleteArticle(
                 options,
-                (err: Error, response: T[]) => {
+                (err: Error, response: T) => {
                     if (err) {
                         reject(err);
                     } else {
@@ -427,10 +427,10 @@ export class AppleNewsClient {
      * @public
      */
     public searchArticlesAsync<T>(options: any) {
-        return new Promise<T[]>((resolve, reject) => {
+        return new Promise<T>((resolve, reject) => {
             this.searchArticles(
                 options,
-                (err: Error, response: T[]) => {
+                (err: Error, response: T) => {
                     if (err) {
                         reject(err);
                     } else {
