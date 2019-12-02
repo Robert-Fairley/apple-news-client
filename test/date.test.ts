@@ -1,7 +1,7 @@
-import { describe, it } from "mocha";
 import { expect } from "chai";
+import { describe, it } from "mocha";
 
-import { pad, formatDate } from "../src/date";
+import { formatDate, pad } from "../src/date";
 
 describe("Date Functions", () => {
 

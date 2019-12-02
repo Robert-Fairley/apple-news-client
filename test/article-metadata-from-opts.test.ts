@@ -1,8 +1,8 @@
-import { describe, it } from "mocha";
 import { expect } from "chai";
+import { describe, it } from "mocha";
 
-import { articleMetadataFromOpts } from "../src/article-metadata-from-opts";
 import { AppleNews } from "../src/apple-news";
+import { articleMetadataFromOpts } from "../src/article-metadata-from-opts";
 import { METADATA_DEFAULT } from "../src/constants"
 
 describe("articleMetadataFromOpts()", () => {
